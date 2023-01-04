@@ -19,8 +19,7 @@ import { verifyToken } from "./middleware/auth.js";
 // import { users, posts } from "./data/index.js";
 
 /* CONFIGURATIONS */
-const __filename = fileURLToPath(
-    import.meta.url);
+const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 dotenv.config();
 const app = express();
@@ -35,17 +34,17 @@ app.use("/assets", express.static(path.join(__dirname, "public/assets")));
 
 /* FILE STORAGE */
 const storage = multer.diskStorage({
-    destination: function(req, file, cb) {
+    destination: function (req, file, cb) {
         cb(null, "public/assets");
     },
-    filename: function(req, file, cb) {
+    filename: function (req, file, cb) {
         cb(null, file.originalname);
     },
 });
 const upload = multer({ storage });
 
 /* ROUTES WITH FILES */
-app.post("/auth/register", upload.single("picture"), register); // middleware happens before register endpoint aka controller 
+app.post("/auth/register", upload.single("picture"), register); // middleware happens before register endpoint aka controller
 app.post("/posts", verifyToken, upload.single("picture"), createPost);
 
 /* ROUTES */
