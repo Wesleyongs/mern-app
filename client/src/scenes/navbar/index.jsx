@@ -108,8 +108,8 @@ const Navbar = () => {
           </FormControl>
         </FlexBetween>
       ) : (
-        <IconButton>
-          onClick={() => setIsMobileMenuToggled(!isMobileMenuToggled)}
+        <IconButton
+          onClick={() => setIsMobileMenuToggled(!isMobileMenuToggled) & console.log(isMobileMenuToggled)}>
           <Menu />
         </IconButton>
       )}
@@ -132,12 +132,12 @@ const Navbar = () => {
             </IconButton>
           </Box>
           {/* MENU ITEMS */}
-          <FlexBetween display="flex" flexDirection="column" justifyContent="center" gap="3rem">
+          <FlexBetween display="flex" flexDirection="column" justifyContent="center" alightItems="center" gap="3rem">
           <IconButton onClick={() => dispatch(setMode())} sx={{ fontsize:"25px"}}>
-            {theme.palette.color.mode === "dark" ? (
-              <DarkMode sx={{ fonSize: "25px" }} />
+            {theme.palette.mode === "dark" ? (
+              <DarkMode sx={{ fontSize: "25px" }} />
             ) : (
-              <LightMode sx={{ fonSize: "25px" }} />
+              <LightMode sx={{ color:dark, fontSize: "25px" }} />
             )}
           </IconButton>
           <Message sx={{ fontSize: "25px" }} />
