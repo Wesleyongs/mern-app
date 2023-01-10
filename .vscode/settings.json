@@ -1,4 +1,5 @@
 {
-  "editor.autoClosingBrackets": "always",
-  
+  "editor.autoClosingBrackets": "languageDefined",
+  "[javascriptreact]": {"editor.autoClosingBrackets": "always"},
+  "[javascript]": {"editor.autoClosingBrackets": "always"}
 }
