@@ -56,7 +56,8 @@ const Form = () => {
   const isRegister = pageType === "register";
 
   const register = async (values, onSubmitProps) => {
-    const formData = FormData(); // Js API object, this is for sending form data with image
+    console.log("register called");
+    const formData = new FormData(); // Js API object, this is for sending form data with image
     for (let value in values) {
       formData.append(value, values[value]);
     }
@@ -67,11 +68,12 @@ const Form = () => {
       { method: "POST", body: formData }
     );
     const savedUser = await savedUserResponse.json();
-    onSubmitProps.resetForm(); // This comes from Formik
+    console.log(savedUser);
+    // onSubmitProps.resetForm(); // This comes from Formik
 
-    if (savedUser) {
-      setPageType("login");
-    }
+    // if (savedUser) {
+    //   setPageType("login");
+    // }
   };
 
   const login = async (values, onSubmitProps) => {
@@ -152,13 +154,13 @@ const Form = () => {
                   label="Occupation"
                   onBlue={handleBlur}
                   onChange={handleChange}
-                  value={values.firstName}
+                  value={values.occupation}
                   name="occupation"
                   error={
                     Boolean(touched.occupation) && Boolean(errors.occupation)
                   }
                   helperText={touched.occupation && errors.occupation}
-                  sx={{ gridColumn: "span 4" }}
+                  sx={{ gridColumn: "span 2" }}
                 />
                 <TextField
                   label="Location"
@@ -168,7 +170,7 @@ const Form = () => {
                   name="location"
                   error={Boolean(touched.location) && Boolean(errors.location)}
                   helperText={touched.location && errors.location}
-                  sx={{ gridColumn: "span 4" }}
+                  sx={{ gridColumn: "span 2" }}
                 />
                 <Box
                   gridColumn="span 4"
