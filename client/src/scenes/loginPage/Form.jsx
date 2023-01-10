@@ -67,13 +67,15 @@ const Form = () => {
       "http://localhost:3001/auth/register",
       { method: "POST", body: formData }
     );
-    const savedUser = await savedUserResponse.json();
-    console.log(savedUser);
-    // onSubmitProps.resetForm(); // This comes from Formik
 
-    // if (savedUser) {
-    //   setPageType("login");
-    // }
+    const savedUser = await savedUserResponse.json();
+    
+    if (savedUserResponse.status === 201) {
+      onSubmitProps.resetForm(); // This comes from Formik, reset the form
+      setPageType("login");
+    } else {
+      console.log(savedUser);
+    }
   };
 
   const login = async (values, onSubmitProps) => {
@@ -83,9 +85,11 @@ const Form = () => {
       body: JSON.stringify(values),
     });
     const loggedIn = await loggedInResponse.json();
+    console.log(loggedIn);
     onSubmitProps.resetForm(); // This comes from Formik
 
     if (loggedIn) {
+      console.log(loggedIn);
       dispatch(
         setLogin({
           user: loggedIn.user,
