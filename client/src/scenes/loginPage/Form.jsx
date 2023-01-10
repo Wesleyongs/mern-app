@@ -134,7 +134,7 @@ const Form = () => {
               <>
                 <TextField
                   label="First Name"
-                  onBlue={handleBlur}
+                  onBlur={handleBlur}
                   onChange={handleChange}
                   value={values.firstName}
                   name="firstName"
@@ -146,7 +146,7 @@ const Form = () => {
                 />
                 <TextField
                   label="last Name"
-                  onBlue={handleBlur}
+                  onBlur={handleBlur}
                   onChange={handleChange}
                   value={values.lastName}
                   name="lastName"
@@ -156,7 +156,7 @@ const Form = () => {
                 />
                 <TextField
                   label="Occupation"
-                  onBlue={handleBlur}
+                  onBlur={handleBlur}
                   onChange={handleChange}
                   value={values.occupation}
                   name="occupation"
@@ -168,7 +168,7 @@ const Form = () => {
                 />
                 <TextField
                   label="Location"
-                  onBlue={handleBlur}
+                  onBlur={handleBlur}
                   onChange={handleChange}
                   value={values.location}
                   name="location"
@@ -214,7 +214,7 @@ const Form = () => {
             )}
             <TextField
               label="Email"
-              onBlue={handleBlur}
+              onBlur={handleBlur}
               onChange={handleChange}
               value={values.email}
               name="email"
@@ -225,7 +225,7 @@ const Form = () => {
             <TextField
               label="Password"
               type="password"
-              onBlue={handleBlur}
+              onBlur={handleBlur}
               onChange={handleChange}
               value={values.password}
               name="password"
