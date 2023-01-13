@@ -1,6 +1,9 @@
 {
     "compilerOptions": {
-        "baseUrl": "src" // so that we can treat src as the root, and also that we don't need to use require, we can import instead
+        "baseUrl": "src", 
+        "msg":" so that we can treat src as the root, and also that we don't need to use require, we can import instead"
     },
-    "include":["src"]
+    "include": [
+        "src"
+    ]
 }

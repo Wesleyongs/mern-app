@@ -6,3 +6,5 @@ const WidgetWrapper = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.background.alt,
   borderRadius: "0.75rem",
 }));
+
+export default WidgetWrapper;
