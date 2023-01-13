@@ -1,5 +1,6 @@
 {
   "editor.autoClosingBrackets": "languageDefined",
   "[javascriptreact]": {"editor.autoClosingBrackets": "always"},
-  "[javascript]": {"editor.autoClosingBrackets": "always"}
+  "[javascript]": {"editor.autoClosingBrackets": "always"},
+  "debug.inlineValues": "on",  
 }
