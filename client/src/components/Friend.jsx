@@ -5,6 +5,7 @@ import { setFriends } from "state";
 import FlexBetween from "./FlexBetween";
 import UserImage from "./UserImage";
 import { useNavigate } from "react-router-dom";
+import config from "config";
 
 const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
   /* State variables */

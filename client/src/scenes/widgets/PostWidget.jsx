@@ -11,7 +11,8 @@ import {
   import { useState } from "react";
   import { useDispatch, useSelector } from "react-redux";
   import { setPost } from "state";
-  
+  import config from "config";
+
   const PostWidget = ({
     postId,
     postUserId,
@@ -20,22 +21,24 @@ import {
     location,
     picturePath,
     userPicturePath,
-    likes,
+    likes, // likes is a map where keys is userId and values is boolean
     comments,
   }) => {
-    const [isComments, setIsComments] = useState(false);
+    const [isComments, setIsComments] = useState(false); // Initial state is false
     const dispatch = useDispatch();
     const token = useSelector((state) => state.token);
     const loggedInUserId = useSelector((state) => state.user._id);
-    const isLiked = Boolean(likes[loggedInUserId]);
+    const isLiked = Boolean(likes[loggedInUserId]); // Check if logged in user has liked the post, returns T/F 
     const likeCount = Object.keys(likes).length;
   
     const { palette } = useTheme();
     const main = palette.neutral.main;
     const primary = palette.primary.main;
   
+    /* API to patch likes */
+    // TODO: Crete abstract wrapper code for patch functions
     const patchLike = async () => {
-      const response = await fetch(`http://localhost:3001/posts/${postId}/like`, {
+      const response = await fetch(`${config.app.url}${postId}/like`, {
         method: "PATCH",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -47,6 +50,7 @@ import {
       dispatch(setPost({ post: updatedPost }));
     };
   
+    /* HTML */
     return (
       <WidgetWrapper m="2rem 0">
         <Friend
@@ -64,7 +68,7 @@ import {
             height="auto"
             alt="post"
             style={{ borderRadius: "0.75rem", marginTop: "0.75rem" }}
-            src={`http://localhost:3001/assets/${picturePath}`}
+            src={`${config.app.url}assets/${picturePath}`}
           />
         )}
         <FlexBetween mt="0.25rem">

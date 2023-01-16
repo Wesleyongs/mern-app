@@ -1,7 +1,7 @@
 const config = {
   app: {
-    port: 3000,
-    name: "myapp",
+    port: 3001,
+    name: "backend",
     url: "http://localhost:3001/",
   },
   db: {
