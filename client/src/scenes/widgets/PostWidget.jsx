@@ -38,7 +38,7 @@ import {
     /* API to patch likes */
     // TODO: Crete abstract wrapper code for patch functions
     const patchLike = async () => {
-      const response = await fetch(`${config.app.url}${postId}/like`, {
+      const response = await fetch(`${config.app.url}posts/${postId}/like`, {
         method: "PATCH",
         headers: {
           Authorization: `Bearer ${token}`,
