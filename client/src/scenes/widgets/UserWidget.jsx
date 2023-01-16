@@ -14,6 +14,7 @@ import { useNavigate } from "react-router-dom";
 import config from "config";
 
 const UserWidget = ({ userId, picturePath }) => {
+  console.log(picturePath);
   const [user, setUser] = useState(null);
   const { palette } = useTheme();
   const navigate = useNavigate();
