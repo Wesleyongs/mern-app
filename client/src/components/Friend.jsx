@@ -10,9 +10,9 @@ import config from "config";
 const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
   /* State variables */
   const dispatch = useDispatch();
-  const navigate = useNavigate;
+  const navigate = useNavigate();
   const { _id } = useSelector((state) => state.user);
-  const token  = useSelector((state) => state.token);
+  const token = useSelector((state) => state.token);
   const friends = useSelector((state) => state.user.friends);
 
   /* Theme variables */
@@ -23,8 +23,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
   const medium = palette.neutral.medium;
 
   /* Check if user is friend */
-  const isFriend = friends.some(friend => friend._id === friendId) || false;
-  // const isFriend = false;
+  const isFriend = friends.some((friend) => friend._id === friendId) || false;
 
   /* API CALL function */
   const patchFriend = async () => {
@@ -55,7 +54,10 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
             variant="h5"
             fontWeight="500"
             sx={{
-              "$:hover": { color: palette.primary.light, cursor: "pointer" },
+              "&:hover": {
+                color: palette.primary.light,
+                cursor: "pointer",
+              },
             }}
           >
             {name}
