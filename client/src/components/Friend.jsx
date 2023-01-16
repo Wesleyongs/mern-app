@@ -24,6 +24,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
 
   /* Check if user is friend */
   const isFriend = friends.some(friend => friend._id === friendId) || false;
+  // const isFriend = false;
 
   /* API CALL function */
   const patchFriend = async () => {
