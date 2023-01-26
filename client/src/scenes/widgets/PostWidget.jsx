@@ -8,7 +8,7 @@ import { Box, Divider, IconButton, Typography, useTheme } from "@mui/material";
 import FlexBetween from "components/FlexBetween";
 import Friend from "components/Friend";
 import WidgetWrapper from "components/WidgetWrapper";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setPost } from "state";
 import config from "config";
@@ -51,6 +51,23 @@ const PostWidget = ({
     dispatch(setPost({ post: updatedPost }));
   };
 
+  /* Convert Base64 str to image */
+  const [imgSrc, setImgSrc] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const getImageSrc = async () => {
+    setIsLoading(true);
+    const response = await fetch(`${config.app.url}assets/${picturePath}`);
+    const base64 = await response.text();
+    const img_src = "data:image/png;base64," + base64;
+    setImgSrc(img_src);
+    setIsLoading(false);
+  };
+
+  useEffect(() => {
+    getImageSrc();
+  }, []);
+
   /* HTML */
   return (
     <WidgetWrapper m="2rem 0">
@@ -63,13 +80,13 @@ const PostWidget = ({
       <Typography color={main} sx={{ mt: "1rem" }}>
         {description}
       </Typography>
-      {picturePath && (
+      {picturePath && !isLoading && (
         <img
           width="100%"
           height="auto"
           alt="post"
           style={{ borderRadius: "0.75rem", marginTop: "0.75rem" }}
-          src={`${config.app.url}assets/${picturePath}`}
+          src={imgSrc}
         />
       )}
       <FlexBetween mt="0.25rem">
