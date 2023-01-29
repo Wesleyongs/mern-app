@@ -11,6 +11,7 @@
 2. username: wesleyispro@gmail.com
 3. password: password
 4. or create a new acct
+5. create acct and post image upload has been disabled
 
 ## Technologies
 1. Frontend: React
