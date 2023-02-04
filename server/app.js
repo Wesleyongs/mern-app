@@ -12,7 +12,7 @@ import authRoutes from "./routes/auth.js";
 import userRoutes from "./routes/users.js";
 import postRoutes from "./routes/posts.js";
 import { register } from "./controllers/auth.js";
-import { createPost } from "./controllers/posts.js";
+import { createPost, getSentiment } from "./controllers/posts.js";
 import { verifyToken } from "./middleware/auth.js";
 
 /* Imports for popuating mongodb */
@@ -71,7 +71,11 @@ const upload = multer({ storage });
 
 /* ROUTES WITH FILES */
 app.post("/auth/register", upload.single("picture"), register); // middleware happens before register endpoint aka controller
-app.post("/posts", verifyToken, upload.single("picture"), createPost);
+app.post("/posts", verifyToken, upload.single("picture"), getSentiment, createPost);
+// app.post("/posts", verifyToken, upload.single("picture"), async (req, res, next) => {
+//   const result = await getSentiment(req, res);
+//   createPost(req, res, result);
+//   });
 
 /* ROUTES */
 app.use("/auth", authRoutes);

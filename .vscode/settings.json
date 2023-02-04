@@ -1,6 +1,10 @@
 {
   "editor.autoClosingBrackets": "languageDefined",
-  "[javascriptreact]": {"editor.autoClosingBrackets": "always"},
-  "[javascript]": {"editor.autoClosingBrackets": "always"},
-  "debug.inlineValues": "on",  
+  "[javascriptreact]": { "editor.autoClosingBrackets": "always" },
+  "[javascript]": { "editor.autoClosingBrackets": "always" },
+  "debug.inlineValues": "on",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

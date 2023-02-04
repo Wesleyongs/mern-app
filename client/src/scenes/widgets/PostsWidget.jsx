@@ -8,9 +8,10 @@ const PostsWidget = ({ userId, isProfile = false }) => {
   const dispatch = useDispatch();
   const posts = useSelector((state) => state.posts) || [];
   const token = useSelector((state) => state.token);
+  const safe = useSelector((state) => state.safe);
 
-  const getPosts = async () => {
-    const response = await fetch(`${config.app.url}posts`, {
+  const getPosts = async (safe) => {
+    const response = await fetch(`${config.app.url}posts/${safe}`, {
       method: "GET",
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -31,9 +32,13 @@ const PostsWidget = ({ userId, isProfile = false }) => {
     if (isProfile) {
       getUserPosts();
     } else {
-      getPosts();
+      if (safe) {
+        getPosts("positive/positive");
+      } else {
+        getPosts("");
+      }
     }
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [safe]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <>

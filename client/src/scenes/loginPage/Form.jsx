@@ -75,7 +75,6 @@ const Form = () => {
       onSubmitProps.resetForm(); // This comes from Formik, reset the form
       setPageType("login");
     } else {
-      console.log(savedUser);
     }
   };
 

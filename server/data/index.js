@@ -152,6 +152,7 @@ export const posts = [
     description: "Some really long random description",
     picturePath: "post1.jpeg",
     userPicturePath: "p3.jpeg",
+    sentiment: true,
     likes: new Map([
       [userIds[0], true],
       [userIds[2], true],
@@ -174,6 +175,7 @@ export const posts = [
       "Another really long random description. This one is longer than the previous one.",
     picturePath: "post2.jpeg",
     userPicturePath: "p6.jpeg",
+    sentiment: true,
     likes: new Map([
       [userIds[7], true],
       [userIds[4], true],
@@ -197,6 +199,7 @@ export const posts = [
       "This is the last really long random description. This one is longer than the previous one.",
     picturePath: "post3.jpeg",
     userPicturePath: "p5.jpeg",
+    sentiment: true,
     likes: new Map([
       [userIds[1], true],
       [userIds[6], true],
@@ -221,6 +224,7 @@ export const posts = [
       "This is the last really long random description. This one is longer than the previous one. Man I'm bored. I'm going to keep typing until I run out of things to say.",
     picturePath: "post4.jpeg",
     userPicturePath: "p7.jpeg",
+    sentiment: true,
     likes: new Map([
       [userIds[1], true],
       [userIds[6], true],
@@ -245,6 +249,7 @@ export const posts = [
       "Just a short description. I'm tired of typing. I'm going to play video games now.",
     picturePath: "post5.jpeg",
     userPicturePath: "p8.jpeg",
+    sentiment: true,
     likes: new Map([
       [userIds[1], true],
       [userIds[3], true],
@@ -269,6 +274,7 @@ export const posts = [
       "For the last time, I'm going to play video games now. I'm tired of typing. I'm going to play video games now.",
     picturePath: "post6.jpeg",
     userPicturePath: "p9.jpeg",
+    sentiment: true,
     likes: new Map([
       [userIds[1], true],
       [userIds[2], true],
