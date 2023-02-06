@@ -1,17 +1,15 @@
-# MERN social media app
+# Social Media App to Demonstrate Filtering by Content Safety
 
 ## Functions
-1. Create an account and login
-2. Post (write a caption and upload a picture)
-3. Add and remove friends
-4. Toggle between light and dark mode
+1. Smiley face on nav bar toggles safe mode
 
-## Minified Demo
-1. [demo](http://mern-social-media-app-react.s3-website-ap-southeast-1.amazonaws.com/)
-2. username: wesleyispro@gmail.com
-3. password: password
-4. or create a new acct
-5. create acct and post image upload has been disabled
+## Machine Learning Backend
+1. [Repo](https://github.com/Wesleyongs/fastapi-personal-project/tree/AI-singapore-submission)
+   
+## Steps
+1. username: wesleyispro@gmail.com
+2. password: password
+3. or create a new acct
 
 ## Technologies
 1. Frontend: React
@@ -31,10 +29,12 @@
 
 ```bash
 cd server
+npm install
 node app.js
 ```
 
 ```bash
 cd client
+npm install
 npm run start
 ```
