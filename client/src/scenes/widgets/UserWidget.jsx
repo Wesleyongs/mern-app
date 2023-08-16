@@ -1,7 +1,7 @@
 import {
   EditOutlined,
   LocationOnOutlined,
-  ManageAccountsOutlined,
+  // ManageAccountsOutlined,
   WorkOutlineOutlined,
 } from "@mui/icons-material";
 import { Box, Divider, Typography, useTheme } from "@mui/material";
@@ -32,8 +32,8 @@ const UserWidget = ({ userId, picturePath }) => {
   };
 
   useEffect(() => {
-    getUser(); // this will be called to render the profile widget on load
-  }, []);
+    getUser(); // eslint-disable-next-line
+  }, []); 
   // TODO: Add loading state
   if (!user) {
     return null;

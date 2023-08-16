@@ -37,7 +37,7 @@ const PostWidget = ({
   const primary = palette.primary.main;
 
   /* API to patch likes */
-  // TODO: Crete abstract wrapper code for patch functions
+  // TODO: Create abstract wrapper code for patch functions
   const patchLike = async () => {
     const response = await fetch(`${config.app.url}posts/${postId}/like`, {
       method: "PATCH",
