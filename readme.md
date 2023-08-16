@@ -27,11 +27,11 @@
 2. Homepage
 3. Profile page
 
-## Usage
+## UsageE
 
 ```bash
 cd server
-node app.js
+node index.js
 ```
 
 ```bash
